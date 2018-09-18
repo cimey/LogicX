@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace LogicX.Model.Entities
         Cancelled = 5
     }
 
-    public enum PlatformEnum : short
+    public enum OrderPlatform : short
     {
         Mobile = 1,
         Web = 2,
@@ -26,15 +27,34 @@ namespace LogicX.Model.Entities
     [Table("Order")]
     public class Order
     {
-
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-
+    
+        [Required]
         public int CoffeeId { get; set; }
 
+        [Required]
         public DateTime PickupTime { get; set; }
 
+        [Required]
         public int UserId { get; set; }
 
+        [Required]
         public OrderStatus OrderStatus { get; set; }
+
+        [Required]
+        public DateTime CreationDate { get; set; }
+
+        [Required]
+        public OrderPlatform OrderPlatform { get; set; }
+
+        [ForeignKey("CoffeeId")]
+        public virtual Coffee Coffee { get; set; }
+
+        [ForeignKey("UserId")]
+        public virtual User User { get; set; }
+
+        public virtual ICollection<PaymentOrder> PaymentOrders { get; set; }
     }
 }
