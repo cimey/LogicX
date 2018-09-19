@@ -47,6 +47,7 @@
     <Compile Include="Entities\Order.cs" />
     <Compile Include="Entities\Payment.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Inputs\Coffee\CalculateEtaInput.cs" />
     <Compile Include="Inputs\Coffee\OrderCoffeeInput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
