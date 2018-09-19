@@ -9,6 +9,7 @@ using System.Web.Http;
 
 namespace LogicX.API.Controllers
 {
+    [RoutePrefix("api/eta")]
     public class ETAController : ApiController
     {
         private IETAService _etaService;
