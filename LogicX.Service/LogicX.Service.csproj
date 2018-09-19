@@ -40,7 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Coffee\CoffeeService.cs" />
+    <Compile Include="Coffee\ICoffeeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LogicX.DataLayer\LogicX.DataLayer.csproj">
+      <Project>{F93D46F2-466C-4537-A42B-B9F028C69704}</Project>
+      <Name>LogicX.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogicX.Model\LogicX.Model.csproj">
+      <Project>{F4FF7336-EC0F-42D9-B388-978915B783ED}</Project>
+      <Name>LogicX.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
